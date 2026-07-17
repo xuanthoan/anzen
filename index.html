@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>An Zen Residences Demo - Preview</title>
+    <meta
+      name="description"
+      content="Bản preview tĩnh website bất động sản An Zen Residences Demo trước khi upload GitHub."
+    />
+    <style>
+      :root {
+        --emerald: #047857;
+        --emerald-dark: #064e3b;
+        --amber: #fbbf24;
+        --slate: #0f172a;
+        --muted: #64748b;
+        --bg: #f8fafc;
+        --white: #ffffff;
+        --ring: rgba(4, 120, 87, 0.25);
+        --shadow: 0 24px 80px rgba(15, 23, 42, 0.12);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--slate);
+        background: var(--bg);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 50;
+        transition: 0.25s ease;
+        color: #fff;
+      }
+
+      .header.scrolled,
+      .header.open {
+        background: rgba(255, 255, 255, 0.96);
+        color: var(--slate);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav-wrap {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .logo-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        color: var(--emerald-dark);
+        background: linear-gradient(135deg, #fef3c7, #bbf7d0);
+        box-shadow: 0 12px 32px rgba(4, 120, 87, 0.22);
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .desktop-nav a,
+      .lang {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0 15px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .desktop-nav a:hover,
+      .lang:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .header.scrolled .desktop-nav a:hover,
+      .header.scrolled .lang:hover {
+        background: #ecfdf5;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .lang {
+        border: 1px solid currentColor;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .btn {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        padding: 0 22px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: var(--emerald);
+        box-shadow: 0 14px 36px rgba(4, 120, 87, 0.24);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: #065f46;
+      }
+
+      .btn-gold {
+        color: #172033;
+        background: var(--amber);
+      }
+
+      .btn-white {
+        color: var(--slate);
+        background: #fff;
+      }
+
+      .menu-btn {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border: 0;
+        border-radius: 999px;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.16);
+        cursor: pointer;
+      }
+
+      .header.scrolled .menu-btn,
+      .header.open .menu-btn {
+        background: #f1f5f9;
+      }
+
+      .mobile-nav {
+        display: none;
+        border-top: 1px solid #e2e8f0;
+        background: #fff;
+        color: var(--slate);
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 16px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(110deg, rgba(15, 23, 42, 0.9), rgba(6, 78, 59, 0.55), rgba(15, 23, 42, 0.25)),
+          radial-gradient(circle at 72% 22%, rgba(251, 191, 36, 0.35), transparent 28%),
+          linear-gradient(135deg, #064e3b, #0f172a 60%, #111827);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: auto -12% -16% 36%;
+        height: 72%;
+        border-radius: 48px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+          repeating-linear-gradient(90deg, transparent 0 70px, rgba(255, 255, 255, 0.12) 70px 73px),
+          repeating-linear-gradient(0deg, transparent 0 64px, rgba(255, 255, 255, 0.08) 64px 67px);
+        transform: perspective(900px) rotateX(58deg) rotateZ(-8deg);
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.32);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: 7%;
+        bottom: 10%;
+        width: min(360px, 44vw);
+        aspect-ratio: 1;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(187, 247, 208, 0.5), transparent 68%);
+        filter: blur(8px);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding: 140px 0 80px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: #fde68a;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin-bottom: 24px;
+        font-size: clamp(42px, 7vw, 82px);
+        line-height: 0.98;
+        letter-spacing: -0.07em;
+      }
+
+      .hero p.desc {
+        max-width: 680px;
+        color: #e2e8f0;
+        font-size: clamp(17px, 2vw, 21px);
+        line-height: 1.75;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      section {
+        padding: 92px 0;
+      }
+
+      .section-head {
+        max-width: 760px;
+        margin: 0 auto 46px;
+        text-align: center;
+      }
+
+      .section-head.left {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      .section-head h2 {
+        margin-bottom: 18px;
+        font-size: clamp(32px, 5vw, 56px);
+        line-height: 1.04;
+        letter-spacing: -0.06em;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: 54px;
+      }
+
+      .visual {
+        position: relative;
+        min-height: 390px;
+        overflow: hidden;
+        border-radius: var(--radius);
+        background:
+          radial-gradient(circle at 24% 22%, rgba(251, 191, 36, 0.35), transparent 22%),
+          radial-gradient(circle at 72% 72%, rgba(16, 185, 129, 0.36), transparent 28%),
+          linear-gradient(135deg, #e2e8f0, #f8fafc);
+        box-shadow: var(--shadow);
+      }
+
+      .visual::before {
+        content: "";
+        position: absolute;
+        inset: 14%;
+        border-radius: 24px;
+        background:
+          repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.12) 0 3px, transparent 3px 48px),
+          repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.08) 0 3px, transparent 3px 42px),
+          rgba(255, 255, 255, 0.42);
+        transform: rotate(-4deg);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .stat,
+      .card,
+      .fact,
+      .distance,
+      .form-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+      }
+
+      .stat {
+        padding: 22px;
+      }
+
+      .stat strong {
+        display: block;
+        color: var(--emerald);
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .dark {
+        color: #fff;
+        background: var(--emerald-dark);
+      }
+
+      .dark .section-head p,
+      .dark .muted {
+        color: #d1fae5;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .feature {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .feature-icon {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        color: var(--slate);
+        background: #fde68a;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: hidden;
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .fact {
+        min-height: 112px;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 24px;
+      }
+
+      .fact:nth-child(odd) {
+        border-right: 1px solid #e2e8f0;
+      }
+
+      .fact b {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--emerald);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .map {
+        min-height: 430px;
+        border-radius: var(--radius);
+        background:
+          linear-gradient(135deg, rgba(4, 120, 87, 0.1), rgba(251, 191, 36, 0.12)),
+          repeating-linear-gradient(45deg, #e2e8f0 0 18px, #f8fafc 18px 36px);
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .map::after {
+        content: "📍 Vị trí dự án";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 14px 18px;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--emerald);
+        font-weight: 900;
+        box-shadow: 0 18px 48px rgba(4, 120, 87, 0.28);
+      }
+
+      .distances {
+        display: grid;
+        gap: 14px;
+      }
+
+      .distance {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 20px;
+      }
+
+      .distance strong {
+        color: var(--emerald);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        overflow: hidden;
+      }
+
+      .thumb {
+        min-height: 220px;
+        background:
+          radial-gradient(circle at 28% 26%, rgba(251, 191, 36, 0.45), transparent 25%),
+          radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.35), transparent 30%),
+          linear-gradient(135deg, #d1fae5, #e0f2fe);
+      }
+
+      .card-body {
+        padding: 22px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+        font-size: 21px;
+        letter-spacing: -0.03em;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        flex: 1;
+        min-height: 48px;
+        border: 0;
+        border-radius: 999px;
+        color: var(--slate);
+        background: #e2e8f0;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        color: #fff;
+        background: var(--emerald);
+      }
+
+      .tower-panel {
+        padding: 24px;
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .tower-visual {
+        min-height: 260px;
+        border-radius: 22px;
+        background:
+          repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.12) 0 2px, transparent 2px 52px),
+          repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.08) 0 2px, transparent 2px 48px),
+          #f1f5f9;
+      }
+
+      .contact {
+        background: var(--emerald-dark);
+        color: #fff;
+      }
+
+      .contact .section-head p {
+        color: #d1fae5;
+      }
+
+      .form-card {
+        padding: 28px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--slate);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid #cbd5e1;
+        border-radius: 16px;
+        padding: 12px 14px;
+        color: var(--slate);
+        background: #fff;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 4px solid var(--ring);
+        border-color: var(--emerald);
+      }
+
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      .checkbox {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin: 16px 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .checkbox input {
+        width: 18px;
+        min-height: 18px;
+        margin-top: 3px;
+      }
+
+      .footer {
+        padding: 54px 0 22px;
+        color: #cbd5e1;
+        background: #020617;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 34px;
+      }
+
+      .footer h3,
+      .footer h4 {
+        color: #fff;
+      }
+
+      .footer a {
+        display: block;
+        margin: 10px 0;
+        color: #cbd5e1;
+      }
+
+      .copyright {
+        margin-top: 36px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .float {
+        position: fixed;
+        right: 18px;
+        bottom: 24px;
+        z-index: 60;
+        display: grid;
+        gap: 10px;
+      }
+
+      .float a,
+      .float button {
+        width: 50px;
+        height: 50px;
+        border: 0;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        background: var(--emerald);
+        box-shadow: 0 12px 34px rgba(15, 23, 42, 0.22);
+        cursor: pointer;
+      }
+
+      .float .call {
+        background: #e11d48;
+      }
+
+      .float .chat {
+        background: #0284c7;
+      }
+
+      @media (max-width: 980px) {
+        .desktop-nav,
+        .nav-actions {
+          display: none;
+        }
+
+        .menu-btn {
+          display: inline-grid;
+          place-items: center;
+        }
+
+        .header.open .mobile-nav {
+          display: block;
+        }
+
+        .grid-2,
+        .facts,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .fact:nth-child(odd) {
+          border-right: 0;
+        }
+
+        .cards {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .nav-wrap {
+          height: 72px;
+        }
+
+        .logo span:last-child {
+          max-width: 160px;
+          line-height: 1.1;
+        }
+
+        section {
+          padding: 70px 0;
+        }
+
+        .hero-content {
+          padding-top: 118px;
+        }
+
+        .hero-cta,
+        .tabs {
+          flex-direction: column;
+        }
+
+        .stats,
+        .cards,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .visual,
+        .map {
+          min-height: 300px;
+        }
+
+        .float {
+          right: 12px;
+          bottom: 14px;
+        }
+
+        .float a,
+        .float button {
+          width: 46px;
+          height: 46px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container nav-wrap">
+        <a class="logo" href="#top" aria-label="Trang chủ">
+          <span class="logo-mark">AZ</span>
+          <span>An Zen Residences</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Điều hướng chính">
+          <a href="#gioi-thieu">Giới thiệu</a>
+          <a href="#vi-tri">Vị trí</a>
+          <a href="#tien-ich">Tiện ích</a>
+          <a href="#thiet-ke">Thiết kế</a>
+          <a href="#tin-tuc">Tin tức</a>
+          <a href="#lien-he">Liên hệ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="lang" type="button">VI/EN</button>
+          <a class="btn btn-gold" href="#lien-he">Đăng ký</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav" aria-label="Điều hướng mobile">
+        <div class="container">
+          <a href="#gioi-thieu">Giới thiệu</a>
+          <a href="#vi-tri">Vị trí</a>
+          <a href="#tien-ich">Tiện ích</a>
+          <a href="#thiet-ke">Thiết kế</a>
+          <a href="#tin-tuc">Tin tức</a>
+          <a href="#lien-he">Liên hệ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-content">
+          <div>
+            <p class="eyebrow">Căn hộ xanh thế hệ mới</p>
+            <h1>Không gian sống cân bằng giữa phố thị và thiên nhiên</h1>
+            <p class="desc">
+              Bản preview tĩnh của website bất động sản hiện đại, tối ưu trải nghiệm người dùng, SEO và chuyển đổi
+              khách hàng. Toàn bộ nội dung và hình ảnh đang là placeholder để dễ thay thế.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#lien-he">Nhận tư vấn dự án</a>
+              <a class="btn btn-white" href="#tong-quan">Xem tổng quan</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gioi-thieu">
+        <div class="container grid-2">
+          <div class="visual" aria-label="Hình minh họa chủ đầu tư"></div>
+          <div>
+            <div class="section-head left">
+              <p class="eyebrow">Giới thiệu</p>
+              <h2>Chủ đầu tư định hướng phát triển cộng đồng sống bền vững</h2>
+              <p>
+                Nội dung mẫu: dự án được phát triển với tiêu chí minh bạch, tiện ích toàn diện và vận hành chuyên
+                nghiệp. Chủ website cần thay bằng thông tin pháp lý chính thức.
+              </p>
+            </div>
+            <div class="stats">
+              <div class="stat"><strong>3</strong><span>Tòa căn hộ</span></div>
+              <div class="stat"><strong>60%+</strong><span>Không gian xanh & tiện ích</span></div>
+              <div class="stat"><strong>1.200+</strong><span>Sản phẩm dự kiến</span></div>
+              <div class="stat"><strong>24/7</strong><span>An ninh & vận hành</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark">
+        <div class="container grid-2">
+          <div>
+            <div class="section-head left">
+              <p class="eyebrow">Dòng sản phẩm</p>
+              <h2>Một chuẩn sống cân bằng cho cư dân đô thị</h2>
+              <p>
+                Thiết kế hướng tới trải nghiệm hằng ngày: đủ tiện ích, đủ riêng tư, đủ kết nối và đủ khoảng xanh để
+                tái tạo năng lượng.
+              </p>
+            </div>
+            <div class="feature-list">
+              <div class="feature"><span class="feature-icon">🌿</span><div><h3>Xanh</h3><p class="muted">Tối ưu mảng xanh và thông gió tự nhiên.</p></div></div>
+              <div class="feature"><span class="feature-icon">🛡</span><div><h3>An tâm</h3><p class="muted">An ninh, vận hành và dịch vụ cư dân rõ ràng.</p></div></div>
+              <div class="feature"><span class="feature-icon">✨</span><div><h3>Tinh tế</h3><p class="muted">Không gian sống hiện đại, dễ cá nhân hóa.</p></div></div>
+            </div>
+          </div>
+          <div class="visual" aria-label="Hình minh họa không gian sống xanh"></div>
+        </div>
+      </section>
+
+      <section id="tong-quan">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Tổng quan</p>
+            <h2>Thông tin dự án được quản lý tập trung</h2>
+            <p>Thông tin bên dưới là dữ liệu mẫu để chỉnh sửa trong source Next.js sau này.</p>
+          </div>
+          <div class="facts">
+            <div class="fact"><b>Tên dự án</b>An Zen Residences Demo</div>
+            <div class="fact"><b>Chủ đầu tư</b>Công ty phát triển bất động sản mẫu</div>
+            <div class="fact"><b>Vị trí</b>Khu đô thị kết nối trung tâm</div>
+            <div class="fact"><b>Quy mô</b>3 tòa căn hộ, khối đế thương mại và cảnh quan xanh</div>
+            <div class="fact"><b>Số lượng căn hộ</b>Khoảng 1.200 căn hộ</div>
+            <div class="fact"><b>Diện tích</b>Từ 45 m² đến 95 m²</div>
+            <div class="fact"><b>Loại hình</b>Căn hộ, shophouse, tiện ích cộng đồng</div>
+            <div class="fact"><b>Sở hữu</b>Lâu dài theo quy định pháp luật</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vi-tri">
+        <div class="container grid-2">
+          <div class="map" aria-label="Bản đồ vị trí dự án"></div>
+          <div>
+            <div class="section-head left">
+              <p class="eyebrow">Vị trí</p>
+              <h2>Kết nối thuận tiện tới các tiện ích trọng điểm</h2>
+              <p>Component Google Maps trong source chính đã chuẩn bị đọc API key từ biến môi trường.</p>
+            </div>
+            <div class="distances">
+              <div class="distance"><span>📍 Trung tâm hành chính</span><strong>05 phút</strong></div>
+              <div class="distance"><span>📍 Trường học liên cấp</span><strong>07 phút</strong></div>
+              <div class="distance"><span>📍 Bệnh viện khu vực</span><strong>10 phút</strong></div>
+              <div class="distance"><span>📍 Trung tâm thương mại</span><strong>12 phút</strong></div>
+              <div class="distance"><span>📍 Tuyến giao thông huyết mạch</span><strong>03 phút</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tien-ich">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Tiện ích</p>
+            <h2>Tiện ích nội khu và ngoại khu đa lớp</h2>
+            <p>Gallery placeholder mô phỏng trải nghiệm xem tiện ích, dễ thay ảnh thật trong source.</p>
+          </div>
+          <div class="cards">
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Vườn thiền trên cao</h3><p>Không gian thư giãn yên tĩnh với mảng xanh và điểm ngắm cảnh.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Hồ bơi resort</h3><p>Hồ bơi dành cho cư dân, bố trí ghế nghỉ và cảnh quan nhiệt đới.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Khu vui chơi trẻ em</h3><p>Khu vận động an toàn giúp trẻ phát triển thể chất và kết nối cộng đồng.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Thương mại dịch vụ</h3><p>Chuỗi cửa hàng tiện lợi, cafe và dịch vụ thiết yếu tại khối đế.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Trường học</h3><p>Kết nối nhanh tới các trường học và khu giáo dục.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><h3>Y tế</h3><p>Dễ dàng tiếp cận bệnh viện, phòng khám và trung tâm chăm sóc sức khỏe.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="thiet-ke">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Thiết kế</p>
+            <h2>Mặt bằng tổng thể và từng tòa</h2>
+            <p>Mặt bằng được tổ chức theo mô hình lõi xanh trung tâm, phân tách giao thông cư dân và thương mại.</p>
+          </div>
+          <div class="grid-2">
+            <div class="visual" aria-label="Mặt bằng tổng thể"></div>
+            <div class="tower-panel">
+              <div class="tabs" role="tablist" aria-label="Chọn tòa">
+                <button class="tab active" type="button" data-tower="1">Tòa 1</button>
+                <button class="tab" type="button" data-tower="2">Tòa 2</button>
+                <button class="tab" type="button" data-tower="3">Tòa 3</button>
+              </div>
+              <div class="tower-visual" aria-label="Mặt bằng tòa đang chọn"></div>
+              <h3 id="towerTitle" style="margin-top: 22px">Tòa 1 - Nhịp sống năng động</h3>
+              <p id="towerText" style="color: var(--muted); line-height: 1.75">
+                Tòa căn hộ gần trục tiện ích chính, phù hợp khách hàng trẻ và gia đình cần kết nối nhanh.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tin-tuc">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Tin tức</p>
+            <h2>Cập nhật thông tin dự án và thị trường</h2>
+            <p>Bản Next.js chính dùng Markdown trong thư mục content/news và có trang chi tiết bài viết.</p>
+          </div>
+          <div class="cards">
+            <article class="card"><div class="thumb"></div><div class="card-body"><small>01/07/2026</small><h3>Cập nhật tiến độ dự án mẫu</h3><p>Những hạng mục đang được triển khai và các mốc thông tin cần cập nhật.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><small>20/06/2026</small><h3>Xu hướng không gian sống xanh</h3><p>Vì sao mảng xanh, ánh sáng và tiện ích cộng đồng ngày càng quan trọng.</p></div></article>
+            <article class="card"><div class="thumb"></div><div class="card-body"><small>05/06/2026</small><h3>Chuẩn bị khi tham quan nhà mẫu</h3><p>Danh sách thông tin người mua nên kiểm tra khi đặt lịch tư vấn.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="lien-he">
+        <div class="container grid-2">
+          <div>
+            <div class="section-head left">
+              <p class="eyebrow">Liên hệ</p>
+              <h2>Đăng ký nhận tư vấn và tài liệu dự án</h2>
+              <p>
+                Form trong bản Next.js chính có server validation, honeypot, UTM capture và adapter webhook/CRM.
+                Bản HTML này chỉ dùng để xem giao diện nhanh.
+              </p>
+            </div>
+            <p><strong>Hotline:</strong> 0900 000 000</p>
+            <p><strong>Email:</strong> sales@example.com</p>
+            <p><strong>Giờ làm việc:</strong> 08:00 - 20:00 hằng ngày</p>
+          </div>
+          <form class="form-card" id="previewForm">
+            <div class="form-grid">
+              <div>
+                <label for="name">Họ tên *</label>
+                <input id="name" name="name" required autocomplete="name" />
+              </div>
+              <div>
+                <label for="phone">Số điện thoại *</label>
+                <input id="phone" name="phone" required autocomplete="tel" inputmode="tel" />
+              </div>
+              <div class="full">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" />
+              </div>
+              <div class="full">
+                <label for="message">Nhu cầu / lời nhắn</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+              </div>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span>Tôi đồng ý với chính sách bảo mật và cho phép liên hệ tư vấn dự án.</span>
+            </label>
+            <button class="btn btn-primary" style="width: 100%" type="submit">Gửi đăng ký tư vấn</button>
+            <p id="formMsg" style="margin: 14px 0 0; color: var(--emerald); font-weight: 800"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>An Zen Residences Demo</h3>
+            <p>
+              Website preview dùng placeholder. Chủ dự án cần cập nhật thông tin pháp lý, giấy phép, hình ảnh và nội
+              dung chính thức trước khi công bố.
+            </p>
+          </div>
+          <div>
+            <h4>Liên hệ</h4>
+            <a href="tel:0900000000">0900 000 000</a>
+            <a href="mailto:sales@example.com">sales@example.com</a>
+            <p>Địa chỉ dự án mẫu</p>
+          </div>
+          <div>
+            <h4>Liên kết</h4>
+            <a href="#gioi-thieu">Giới thiệu</a>
+            <a href="#vi-tri">Vị trí</a>
+            <a href="#tien-ich">Tiện ích</a>
+            <a href="#lien-he">Liên hệ</a>
+          </div>
+        </div>
+        <div class="copyright">© 2026 An Zen Residences Demo. Bản preview tĩnh, không dùng tài sản từ website tham khảo.</div>
+      </div>
+    </footer>
+
+    <div class="float" aria-label="Nút nổi">
+      <a class="call" href="tel:0900000000" aria-label="Gọi hotline">☎</a>
+      <a class="chat" href="#" aria-label="Chat Zalo">💬</a>
+      <a href="#lien-he" aria-label="Đăng ký tư vấn">✉</a>
+      <button type="button" id="topBtn" aria-label="Lên đầu trang">↑</button>
+    </div>
+
+    <script>
+      const header = document.getElementById('header');
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileLinks = document.querySelectorAll('.mobile-nav a');
+      const tabs = document.querySelectorAll('.tab');
+      const towerTitle = document.getElementById('towerTitle');
+      const towerText = document.getElementById('towerText');
+      const previewForm = document.getElementById('previewForm');
+      const formMsg = document.getElementById('formMsg');
+      const topBtn = document.getElementById('topBtn');
+
+      const towers = {
+        1: {
+          title: 'Tòa 1 - Nhịp sống năng động',
+          text: 'Tòa căn hộ gần trục tiện ích chính, phù hợp khách hàng trẻ và gia đình cần kết nối nhanh.',
+        },
+        2: {
+          title: 'Tòa 2 - Cân bằng và riêng tư',
+          text: 'Tòa căn hộ có tầm nhìn mở, tối ưu thông gió và ánh sáng tự nhiên cho từng căn hộ.',
+        },
+        3: {
+          title: 'Tòa 3 - Tầm nhìn cảnh quan',
+          text: 'Tòa căn hộ hướng về lõi xanh, thích hợp khách hàng ưu tiên sự yên tĩnh và cảnh quan.',
+        },
+      };
+
+      function syncHeader() {
+        header.classList.toggle('scrolled', window.scrollY > 24);
+      }
+
+      syncHeader();
+      window.addEventListener('scroll', syncHeader, { passive: true });
+
+      menuBtn.addEventListener('click', () => {
+        const open = !header.classList.contains('open');
+        header.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.textContent = open ? '×' : '☰';
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          header.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        });
+      });
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((item) => item.classList.remove('active'));
+          tab.classList.add('active');
+          const data = towers[tab.dataset.tower];
+          towerTitle.textContent = data.title;
+          towerText.textContent = data.text;
+        });
+      });
+
+      previewForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        formMsg.textContent = 'Preview: form hợp lệ. Source Next.js chính sẽ gửi qua API /api/leads.';
+        previewForm.reset();
+      });
+
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+  </body>
+</html>
