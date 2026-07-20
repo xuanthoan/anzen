@@ -705,13 +705,13 @@ Settings → Environment Variables
 Thêm biến:
 
 ```env
-NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+NEXT_PUBLIC_GTM_ID=GTM-57RZ66NH
 ```
 
-Ví dụ:
+Website hiện đã cấu hình GTM mặc định:
 
 ```env
-NEXT_PUBLIC_GTM_ID=GTM-ABC1234
+NEXT_PUBLIC_GTM_ID=GTM-57RZ66NH
 ```
 
 Khuyến nghị: dùng GTM để quản lý GA4, Meta Pixel và Google Ads Conversion.

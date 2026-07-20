@@ -117,7 +117,7 @@ Slug lấy theo tên file.
 Copy `.env.example` thành `.env.local` khi chạy local:
 
 ```env
-NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_GTM_ID=GTM-57RZ66NH
 NEXT_PUBLIC_GA_ID=
 NEXT_PUBLIC_META_PIXEL_ID=
 NEXT_PUBLIC_GOOGLE_ADS_ID=
