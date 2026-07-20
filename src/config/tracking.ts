@@ -8,7 +8,7 @@ export const trackingConfig = {
   googleAdsConversionLabel: process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL || '',
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
   enabledByDefault: isProduction,
-  consentRequired: true,
+  consentRequired: false,
 };
 
 export function isValidTrackingId(value: string, prefix?: string) {
