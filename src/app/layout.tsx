@@ -4,7 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingActions } from '@/components/layout/floating-actions';
-import { ConsentBanner, GoogleTagManager, GoogleTagManagerNoScript, TrackingBootstrap } from '@/components/tracking/trackers';
+import { GoogleTagManager, GoogleTagManagerNoScript, TrackingBootstrap } from '@/components/tracking/trackers';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
-        <ConsentBanner />
+
       </body>
     </html>
   );
