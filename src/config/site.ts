@@ -5,8 +5,8 @@ export const siteConfig = {
     'Căn hộ vừa túi tiền tại trung tâm kết nối Hải Phòng - Phát triển bởi Nam Long ADC.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   locale: 'vi_VN',
-  logo: '/images/common/logo-placeholder.svg',
-  ogImage: '/images/project/hero-desktop.svg',
+  logo: '/images/common/logo-placeholder.jpg',
+  ogImage: '/images/project/hero-desktop.jpg',
   ctaLabel: 'Đăng ký tư vấn',
   keywords: ['bất động sản', 'căn hộ', 'An Zen Residences', 'EHome', 'Nam Long ADC', 'Hải Phòng'],
 };

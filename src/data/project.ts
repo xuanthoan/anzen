@@ -29,8 +29,8 @@ export const locationDistances = [
 
 export const heroSlides = [
   {
-    desktop: '/images/project/hero-desktop.svg',
-    mobile: '/images/project/hero-mobile.svg',
+    desktop: '/images/project/hero-mobile.jpg',
+    mobile: '/images/project/hero-mobile.jpg',
     alt: 'Phối cảnh dự án An Zen Residences',
     title: 'Căn hộ vừa túi tiền tại trung tâm kết nối Hải Phòng',
     description:
