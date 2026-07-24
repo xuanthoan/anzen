@@ -4,7 +4,7 @@ export const contactConfig = {
   zaloUrl: 'https://zalo.me/0900000000',
   messengerUrl: 'https://m.me/example',
   email: 'sales@example.com',
-  address: 'Địa chỉ dự án mẫu - Chủ đầu tư cần cập nhật thông tin chính thức',
+  address: 'Đường Trang Quan, phường An Hải, TP Hải Phòng',
   businessHours: '08:00 - 20:00 hằng ngày',
   socials: [
     { label: 'Facebook', href: 'https://facebook.com/example' },

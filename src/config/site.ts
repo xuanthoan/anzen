@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: 'An Zen Residences Demo',
-  projectName: 'An Zen Residences Demo',
+  name: 'An Zen Residences',
+  projectName: 'An Zen Residences - EHome',
   description:
-    'Website bất động sản hiện đại cho dự án căn hộ xanh, dữ liệu mẫu sẵn sàng thay thế bằng nội dung chính thức.',
+    'Căn hộ vừa túi tiền tại trung tâm kết nối Hải Phòng - Phát triển bởi Nam Long ADC.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   locale: 'vi_VN',
   logo: '/images/common/logo-placeholder.svg',
   ogImage: '/images/project/hero-desktop.svg',
   ctaLabel: 'Đăng ký tư vấn',
-  keywords: ['bất động sản', 'căn hộ', 'dự án xanh', 'nhà ở hiện đại'],
+  keywords: ['bất động sản', 'căn hộ', 'An Zen Residences', 'EHome', 'Nam Long ADC', 'Hải Phòng'],
 };
 
 export const navigation = [

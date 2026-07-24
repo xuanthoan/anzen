@@ -1,16 +1,22 @@
 ---
-title: Hướng dẫn chuẩn bị khi tham quan nhà mẫu
-description: Danh sách thông tin người mua nên kiểm tra khi đặt lịch tham quan và tư vấn dự án.
-date: 2026-06-05
+title: Hướng dẫn tham quan nhà mẫu và tư vấn dự án
+description: Lịch trình tham quan, các câu hỏi cần hỏi và lưu ý khi xem căn hộ thực tế tại An Zen Residences.
+date: 2026-07-24
 image: /images/news/news-3.svg
-alt: Hình minh họa khách hàng tham quan nhà mẫu
+alt: Nhà mẫu An Zen Residences
 category: Tư vấn
 ---
 
-## Trước khi tham quan
+## Đặt lịch tham quan
 
-Bạn nên chuẩn bị nhu cầu diện tích, ngân sách dự kiến và các câu hỏi về pháp lý, tiến độ, chính sách thanh toán.
+An Zen Residences mở cửa đón khách tham quan từ thứ 2 đến Chủ nhật (8h-18h). Để đặt lịch, quý khách vui lòng đăng ký qua form trên website hoặc liên hệ hotline chính thức của dự án.
 
-## Khi làm việc với tư vấn
+## Những gì cần chuẩn bị
 
-Luôn yêu cầu thông tin chính thức và lưu lại tài liệu được cung cấp để đối chiếu sau buổi tư vấn.
+- **Danh sách câu hỏi**: pháp lý, tiến độ, giá bán, chi phí quản lý.
+- **Giấy tờ tùy thân** để nhận tài liệu dự án.
+- **Thước dây** hoặc ứng dụng đo đạc để kiểm tra diện tích thực tế.
+
+## Trong buổi tư vấn
+
+Nhân viên tư vấn sẽ dẫn khách tham quan nhà mẫu, giải thích về vật liệu xây dựng, thiết kế và các gói thanh toán. Khách hàng nên chụp ảnh, ghi âm (nếu được phép) và yêu cầu bảng giá chi tiết.
