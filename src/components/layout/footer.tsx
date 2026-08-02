@@ -10,7 +10,7 @@ export function Footer() {
       <Container className="grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <p className="text-2xl font-semibold">{siteConfig.projectName}</p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">Website mẫu dùng placeholder. Chủ dự án cần cập nhật thông tin pháp lý, giấy phép, hình ảnh và nội dung chính thức trước khi công bố.</p>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">An Zen Residences - căn hộ EHome tại đường Trang Quan, phường An Hải, Hải Phòng. Quy mô 3 block 18 tầng với 887 căn hộ, phát triển bởi Nam Long ADC/Nam Long Group. Không gian xanh, tiện ích đồng bộ, kết nối thuận tiện.</p>
         </div>
         <div>
           <p className="font-semibold">Liên hệ</p>
@@ -25,7 +25,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-slate-300">{navigation.map((n)=><li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}<li><Link href="/chinh-sach-bao-mat">Chính sách bảo mật</Link></li></ul>
         </div>
       </Container>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-slate-400">© {new Date().getFullYear()} {siteConfig.projectName}. All rights reserved. Nội dung đang là bản demo.</div>
+      <div className="border-t border-white/10 py-5 text-center text-xs text-slate-400">© {new Date().getFullYear()} {siteConfig.projectName}. Phát triển bởi Nam Long Group.</div>
     </footer>
   );
 }

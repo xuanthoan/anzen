@@ -9,7 +9,7 @@ export function NewsSection() {
   return (
     <section className="bg-slate-50 py-20 md:py-28">
       <Container>
-        <SectionHeading eyebrow="Tin tức" title="Cập nhật thông tin dự án và thị trường" description="Dữ liệu ban đầu dùng Markdown trong repository, dễ chuyển sang headless CMS sau này." />
+        <SectionHeading eyebrow="Tin tức" title="Cập nhật thông tin dự án và thị trường" description="Cập nhật những thông tin mới nhất về tiến độ thi công, chính sách bán hàng và sự kiện cộng đồng tại An Zen Residences." />
         <div className="mt-12 grid gap-6 md:grid-cols-3">{articles.map((a)=><NewsCard key={a.slug} article={a}/>)}</div>
         <div className="mt-10 text-center"><ButtonLink href="/tin-tuc">Xem tất cả tin tức</ButtonLink></div>
       </Container>
