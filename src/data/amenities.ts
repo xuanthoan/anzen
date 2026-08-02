@@ -71,7 +71,7 @@ export const amenities: Amenity[] = [
     description: 'Trường mầm non nội khu với chương trình giáo dục sớm, chăm sóc trẻ toàn diện.',
     image: '/images/amenities/amenity-9.jpg',
     alt: 'Nhà trẻ tại An Zen Residences',
-    category: 'internal',
+    category: 'external',
   },
   {
     id: 'ev-charger',
@@ -79,7 +79,7 @@ export const amenities: Amenity[] = [
     description: 'Trạm sạc EV tiện lợi, hỗ trợ đa dạng cổng kết nối cho xe điện.',
     image: '/images/amenities/amenity-10.jpg',
     alt: 'Trạm sạc xe điện tại An Zen Residences',
-    category: 'internal',
+    category: 'external',
   },
   {
     id: 'shophouse',
@@ -87,6 +87,6 @@ export const amenities: Amenity[] = [
     description: 'Khu phố thương mại tích hợp mặt bằng kinh doanh và không gian sống.',
     image: '/images/amenities/amenity-11.jpg',
     alt: 'Shophouse thương mại tại An Zen Residences',
-    category: 'internal',
+    category: 'external',
   },
 ];
