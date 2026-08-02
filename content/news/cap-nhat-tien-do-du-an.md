@@ -2,7 +2,7 @@
 title: Cập nhật tiến độ dự án An Zen Residences
 description: Các hạng mục hoàn thiện và lộ trình bàn giao căn hộ EHome Hải Phòng trong quý 3/2026.
 date: 2026-07-24
-image: /images/news/news-1.svg
+image: /images/news/news-1.jpg
 alt: Tiến độ thi công dự án An Zen Residences
 category: Tiến độ
 ---

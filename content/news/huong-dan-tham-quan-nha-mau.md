@@ -2,7 +2,7 @@
 title: Hướng dẫn tham quan nhà mẫu và tư vấn dự án
 description: Lịch trình tham quan, các câu hỏi cần hỏi và lưu ý khi xem căn hộ thực tế tại An Zen Residences.
 date: 2026-07-24
-image: /images/news/news-3.svg
+image: /images/news/news-3.jpg
 alt: Nhà mẫu An Zen Residences
 category: Tư vấn
 ---

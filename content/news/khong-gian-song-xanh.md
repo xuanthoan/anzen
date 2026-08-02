@@ -2,7 +2,7 @@
 title: Chuẩn sống vừa túi tiền tại EHome Hải Phòng
 description: An Zen Residences mang đến giải pháp nhà ở chất lượng với mức giá phù hợp cho người trẻ và gia đình.
 date: 2026-07-24
-image: /images/news/news-2.svg
+image: /images/news/news-2.jpg
 alt: Không gian sống xanh tại EHome Hải Phòng
 category: Phong cách sống
 ---
