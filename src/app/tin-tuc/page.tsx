@@ -9,6 +9,6 @@ export const metadata: Metadata = { title: 'Tin tức', description: 'Danh sách
 export default function NewsPage() {
   const articles = getArticles();
   return (
-    <><div className="h-20 bg-emerald-950" /><section className="bg-slate-50 py-20 md:py-28"><Container><SectionHeading eyebrow="Tin tức" title="Tin tức & cập nhật" description="Các bài viết mẫu được quản lý bằng Markdown trong repository." /><div className="mt-12 grid gap-6 md:grid-cols-3">{articles.map((a)=><NewsCard key={a.slug} article={a}/>)}</div></Container></section></>
+    <><div className="h-20 bg-emerald-950" /><section className="bg-slate-50 py-20 md:py-28"><Container><SectionHeading eyebrow="Tin tức" title="Tin tức & cập nhật" description="Cập nhật tin tức dự án, thông tin thị trường bất động sản và bài viết tư vấn chuyên sâu." /><div className="mt-12 grid gap-6 md:grid-cols-3">{articles.map((a)=><NewsCard key={a.slug} article={a}/>)}</div></Container></section></>
   );
 }

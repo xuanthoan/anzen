@@ -10,7 +10,7 @@ export function DeveloperIntroSection() {
       <Container className="grid items-center gap-12 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-emerald-50 shadow-xl"><Image src="/images/project/developer.jpg" alt="Hình minh họa chủ đầu tư dự án" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div>
         <div>
-          <SectionHeading eyebrow="Giới thiệu" title="Chủ đầu tư định hướng phát triển cộng đồng sống bền vững" description="Nội dung mẫu: dự án được phát triển với tiêu chí minh bạch, tiện ích toàn diện và vận hành chuyên nghiệp. Chủ website cần thay bằng thông tin pháp lý chính thức." className="text-left" />
+          <SectionHeading eyebrow="Giới thiệu" title="Chủ đầu tư định hướng phát triển cộng đồng sống bền vững" description="Nam Long Group là thương hiệu bất động sản uy tín với hơn 30 năm phát triển đô thị và nhà ở tại Việt Nam. Thông qua Nam Long ADC, An Zen Residences được định hướng trở thành cộng đồng EHome hiện đại, bền vững và phù hợp với nhu cầu an cư của gia đình trẻ tại Hải Phòng." className="text-left" />
           <div className="mt-8 grid grid-cols-2 gap-4">{projectStats.map((s)=><div key={s.label} className="rounded-3xl bg-slate-50 p-5"><p className="text-3xl font-bold text-emerald-700">{s.value}</p><p className="mt-2 text-sm text-slate-600">{s.label}</p></div>)}</div>
         </div>
       </Container>
