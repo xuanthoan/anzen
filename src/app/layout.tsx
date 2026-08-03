@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: { type: 'website', locale: siteConfig.locale, url: siteConfig.url, siteName: siteConfig.name, title: siteConfig.projectName, description: siteConfig.description, images: [absoluteUrl(siteConfig.ogImage, siteConfig.url)] },
   twitter: { card: 'summary_large_image', title: siteConfig.projectName, description: siteConfig.description, images: [absoluteUrl(siteConfig.ogImage, siteConfig.url)] },
-  icons: { icon: '/favicon.ico' },
+  icons: { icon: '/favicon.ico?v=2' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
