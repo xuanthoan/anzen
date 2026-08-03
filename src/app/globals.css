@@ -8,6 +8,18 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 a { text-decoration: none; }
 img { max-width: 100%; height: auto; }
 :focus-visible { outline: 3px solid #34d399; outline-offset: 3px; }
+
+/* Fix autofill styles for lead form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0f172a !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .prose { color: #334155; line-height: 1.8; }
 .prose h2 { color: #0f172a; font-size: 1.75rem; font-weight: 700; margin-top: 2rem; }
 .prose p { margin: 1rem 0; }
