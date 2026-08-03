@@ -39,7 +39,7 @@ export function LeadForm({ source = 'website_form' }: { source?: string }) {
         <div className="md:col-span-2"><label htmlFor="message" className="text-sm font-semibold text-slate-800">Nhu cầu / lời nhắn</label><textarea id="message" name="message" maxLength={500} rows={4} className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-950 caret-emerald-700 placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/50" /></div>
       </div>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-      <label className="mt-5 flex gap-3 text-sm text-slate-600"><input name="privacy" value="yes" required type="checkbox" className="mt-1 h-4 w-4" />Tôi đồng ý với chính sách bảo mật và cho phép liên hệ tư vấn dự án.</label>
+
       <button disabled={submitting} className="mt-6 min-h-12 w-full rounded-full bg-emerald-700 px-6 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60">{submitting ? 'Đang gửi...' : 'Gửi đăng ký tư vấn'}</button>
       {status.message ? <p role="status" className={`mt-4 rounded-2xl p-4 text-sm ${status.type === 'success' ? 'bg-emerald-50 text-emerald-800' : 'bg-rose-50 text-rose-800'}`}>{status.message}</p> : null}
     </form>

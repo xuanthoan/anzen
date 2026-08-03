@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
     if (body.website) return NextResponse.json({ ok: true, message: 'Đã nhận thông tin.' });
-    if (body.privacy !== 'yes') return NextResponse.json({ ok: false, message: 'Vui lòng đồng ý chính sách bảo mật.' }, { status: 400 });
+
     const fullName = sanitizeText(String(body.fullName || ''), 80);
     const phone = sanitizeText(String(body.phone || ''), 20);
     const email = sanitizeText(String(body.email || ''), 120);
